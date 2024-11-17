@@ -1,0 +1,51 @@
+/* Estilos generales */
+body {
+    background: linear-gradient(90deg, rgba(0,0,36,1) 0%, rgba(103,9,121,1) 35%, rgba(0,26,255,1) 100%);
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 50px;
+    background-color: #000;
+
+}
+
+.container {
+    background: linear-gradient(90deg, rgb(56 54 139) 0%, rgba(103, 9, 121, 1) 35%, rgba(0, 74, 255, 1) 100%);
+    max-width: 600px;
+    margin: 0 auto;
+    border: 1px solid black;
+
+}
+
+button {
+    color: #fff;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    background: linear-gradient(90deg, rgba(0,0,36,1) 0%, rgba(103,9,121,1) 35%, rgba(0,74,255,1) 100%);
+}
+
+#resultado {
+    margin-top: 30px;
+    font-size: 18px;
+    color: #fff;
+}
+
+/* Canvas para dibujar el triángulo */
+#trianguloCanvas {
+    margin-top: 30px;
+}
+h1{
+    color: #fff;
+}
+label{
+    color: #fff;
+}
+h5{
+    padding: 20px;
+    width: 93%;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    color: #fff;
+}
+.div{
+    padding: 20px;
+}

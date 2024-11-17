@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triángulo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>caracterizacion de Triángulos</h1>
+        <div>
+            <label for="ladoA">Base del Triángulo:</label>
+            <input type="number" id="ladoA" placeholder="Base">
+        </div>
+        <div style="
+            padding: 10px;
+        ">
+
+        </div>
+        <div>
+            <label for="ladoB">Lado Derecho:</label>
+            <input type="number" id="ladoB" placeholder="Lado Derecho">
+        </div>
+        <div style="
+            padding: 20px;
+        ">
+        <div>
+            <label for="ladoC">Lado Izquierdo:</label>
+            <input type="number" id="ladoC" placeholder="Lado Izquierdo">
+        </div>
+        <button onclick="calcularTriangulo()">caracterizar Triángulo</button>
+
+        <div id="resultado">
+            <p id="tipoTriangulo"></p>
+            <p id="angulosTriangulo"></p>
+        </div>
+
+        <canvas id="trianguloCanvas" width="500" height="500"></canvas> 
+        <div><h5>Desarrollado por Oscar Julian Pulido</h5></marquee>
+    </div>
+    
+
+    <script src="js.js"></script>
+</body>
+</html>
