@@ -3,49 +3,87 @@ body {
     background: linear-gradient(90deg, rgba(0,0,36,1) 0%, rgba(103,9,121,1) 35%, rgba(0,26,255,1) 100%);
     font-family: Arial, sans-serif;
     text-align: center;
-    padding: 50px;
+    padding: 10vw 5vw;  /* Ajuste de padding para ser relativo */
     background-color: #000;
-
+    margin: 0;  /* Asegura que no haya márgenes indeseados */
 }
 
 .container {
     background: linear-gradient(90deg, rgb(56 54 139) 0%, rgba(103, 9, 121, 1) 35%, rgba(0, 74, 255, 1) 100%);
-    max-width: 600px;
+    max-width: 90%; /* Se ajusta según el ancho de la pantalla */
     margin: 0 auto;
     border: 1px solid black;
-
+    padding: 5vw;
+    box-sizing: border-box;  /* Para incluir el padding en el cálculo del ancho */
 }
 
 button {
     color: #fff;
-    padding: 10px 20px;
-    margin-top: 20px;
+    padding: 2vw 4vw;
+    margin-top: 2vh;
     cursor: pointer;
     background: linear-gradient(90deg, rgba(0,0,36,1) 0%, rgba(103,9,121,1) 35%, rgba(0,74,255,1) 100%);
 }
 
 #resultado {
-    margin-top: 30px;
-    font-size: 18px;
+    margin-top: 3vh;
+    font-size: 1.5rem;
     color: #fff;
 }
 
 /* Canvas para dibujar el triángulo */
 #trianguloCanvas {
-    margin-top: 30px;
+    margin-top: 3vh;
+    width: 90%;  /* Asegura que el canvas ocupe el 90% del contenedor */
+    height: auto;
 }
-h1{
+
+h1 {
     color: #fff;
+    font-size: 2rem; /* Tamaño más pequeño por defecto */
 }
-label{
+
+label {
     color: #fff;
+    font-size: 1.5rem; /* Tamaño del texto de las etiquetas */
 }
-h5{
-    padding: 20px;
-    width: 93%;
+
+h5 {
+    padding: 3vh 5vw;
+    width: 90%;
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
     color: #fff;
+    font-size: 1rem;  /* Tamaño de texto más pequeño para dispositivos móviles */
 }
-.div{
-    padding: 20px;
+
+/* Estilos para pantallas grandes */
+@media (min-width: 768px) {
+    h1 {
+        font-size: 3rem;  /* Mayor tamaño de título en pantallas más grandes */
+    }
+
+    button {
+        padding: 15px 30px;
+        font-size: 1.2rem;
+    }
+
+    #trianguloCanvas {
+        max-width: 500px;  /* Maximo ancho para el canvas */
+        max-height: 500px;  /* Maximo alto para el canvas */
+    }
+
+    h5 {
+        font-size: 1.2rem;  /* Título más grande */
+    }
+}
+
+@media (min-width: 1024px) {
+    h1 {
+        font-size: 4rem;
+    }
+
+    button {
+        padding: 18px 36px;
+        font-size: 1.5rem;
+    }
 }
