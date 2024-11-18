@@ -15,21 +15,25 @@ function calcularTriangulo() {
     b = Math.max(b, 5);
     c = Math.max(c, 5);
 
-    // Determinar el tipo de triángulo
-    let tipo = tipoTriangulo(a, b, c);
+    // Determinar el tipo de triángulo por lados
+    let tipoPorLados = tipoTrianguloPorLados(a, b, c);
     let angulos = calcularAngulos(a, b, c);
-    let tipoTrianguloTexto = `Tipo de triángulo: ${tipo}`;
-    let angulosTexto = `Ángulos: A = ${angulos[0].toFixed(2)}°, B = ${angulos[1].toFixed(2)}°, C = ${angulos[2].toFixed(2)}°`;
+
+    // Determinar el tipo de triángulo por ángulos
+    let tipoPorAngulos = tipoTrianguloPorAngulos(angulos);
 
     // Mostrar los resultados
+    let tipoTrianguloTexto = `Tipo de triángulo: ${tipoPorLados} (${tipoPorAngulos})`;
+    let angulosTexto = `Ángulos: A = ${angulos[0].toFixed(2)}°, B = ${angulos[1].toFixed(2)}°, C = ${angulos[2].toFixed(2)}°`;
+
     document.getElementById("tipoTriangulo").innerText = tipoTrianguloTexto;
     document.getElementById("angulosTriangulo").innerText = angulosTexto;
 
     // Dibujar el triángulo visualmente con las proporciones correctas
-    dibujarTriangulo(a, b, c);
+    dibujarTrianguloConAngulos(a, b, c, angulos);
 }
 
-function tipoTriangulo(a, b, c) {
+function tipoTrianguloPorLados(a, b, c) {
     if (a === b && b === c) {
         return "Equilátero";
     } else if (a === b || b === c || a === c) {
@@ -46,7 +50,19 @@ function calcularAngulos(a, b, c) {
     return [A, B, C];
 }
 
-function dibujarTriangulo(a, b, c) {
+function tipoTrianguloPorAngulos(angulos) {
+    let [A, B, C] = angulos;
+    
+    if (A === 90 || B === 90 || C === 90) {
+        return "Rectángulo";
+    } else if (A > 90 || B > 90 || C > 90) {
+        return "Obtusángulo";
+    } else {
+        return "Acutángulo";
+    }
+}
+
+function dibujarTrianguloConAngulos(a, b, c, angulos) {
     // Obtener el contexto del canvas
     let canvas = document.getElementById("trianguloCanvas");
     let ctx = canvas.getContext("2d");
@@ -79,9 +95,9 @@ function dibujarTriangulo(a, b, c) {
     let x2 = x1 + scaledBase; // Base del triángulo
     let y2 = y1;
 
-    // Coordenadas del vértice superior
-    let x3 = (x1 + x2) / 2;
-    let y3 = y1 - scaledHeight;
+    // Vértices en función de los ángulos (usando trigonometría)
+    let x3 = x1 + scaledBase * Math.cos(angulos[0] * Math.PI / 180); // Cálculo de x para el vértice superior
+    let y3 = y1 - scaledHeight * Math.sin(angulos[0] * Math.PI / 180); // Cálculo de y para el vértice superior
 
     // Dibujar el triángulo en el canvas
     ctx.beginPath();
@@ -91,7 +107,7 @@ function dibujarTriangulo(a, b, c) {
     ctx.closePath();     // Cierra el triángulo
 
     // Establecer el color dependiendo del tipo de triángulo
-    ctx.fillStyle = getColorPorTipo(tipoTriangulo(a, b, c));
+    ctx.fillStyle = getColorPorTipo(tipoTrianguloPorLados(a, b, c));
     ctx.fill();
     ctx.stroke();  // Dibuja el contorno
 }
