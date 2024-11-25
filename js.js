@@ -1,8 +1,8 @@
 function calcularTriangulo() {
     // Obtener los valores de los lados
-    let a = parseFloat(document.getElementById("ladoA").value);  // Base
-    let b = parseFloat(document.getElementById("ladoB").value);  // Lado derecho
-    let c = parseFloat(document.getElementById("ladoC").value);  // Lado izquierdo
+    let a = parseFloat(document.getElementById("lado a").value);  // Base
+    let b = parseFloat(document.getElementById("lado b").value);  // Lado derecho
+    let c = parseFloat(document.getElementById("lado c").value);  // Lado izquierdo
 
     // Verificar si los lados cumplen con la desigualdad triangular
     if (a + b <= c || a + c <= b || b + c <= a) {
