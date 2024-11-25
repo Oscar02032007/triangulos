@@ -10,11 +10,6 @@ function calcularTriangulo() {
         return;  // Salir de la función si no es un triángulo válido
     }
 
-    // Establecer un valor mínimo de 5 para los lados
-    a = Math.max(a, 5);
-    b = Math.max(b, 5);
-    c = Math.max(c, 5);
-
     // Determinar el tipo de triángulo por lados
     let tipoPorLados = tipoTrianguloPorLados(a, b, c);
     let angulos = calcularAngulos(a, b, c);
