@@ -10,6 +10,7 @@ function calcularTriangulo() {
         return;  // Salir de la función si no es un triángulo válido
     }
 
+
     // Determinar el tipo de triángulo por lados
     let tipoPorLados = tipoTrianguloPorLados(a, b, c);
     let angulos = calcularAngulos(a, b, c);
@@ -18,7 +19,7 @@ function calcularTriangulo() {
     let tipoPorAngulos = tipoTrianguloPorAngulos(angulos);
 
     // Mostrar los resultados
-    let tipoTrianguloTexto = `Tipo de triángulo: ${tipoPorLados} (${tipoPorAngulos})`;
+    let tipoTrianguloTexto = `Tipo de triángulo: ${tipoPorLados} (${tipoPorAngulos})`;c
     let angulosTexto = `Ángulos: A = ${angulos[0].toFixed(2)}°, B = ${angulos[1].toFixed(2)}°, C = ${angulos[2].toFixed(2)}°`;
 
     document.getElementById("tipoTriangulo").innerText = tipoTrianguloTexto;
